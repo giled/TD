@@ -21,28 +21,14 @@ public class BuildManager : MonoBehaviour {
     }
    
     public GameObject buildEffect;
-        
+    public GameObject sellEffect;
   
     private NewBehaviourScript turretToBuild;
     private node selectedNode;
     public NodeUI nodeUI;
     public bool canBuild { get { return turretToBuild != null; } }
     //public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
-    public void buildTurretOn(node node)
-    {
-           if (PlayerStats.Money < turretToBuild.cost)
-        {
-            Debug.Log("No Money");
-            return;
-        }
-        PlayerStats.Money -= turretToBuild.cost;
-       
-       GameObject turret=(GameObject) Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
-        node.turret = turret;
-        Debug.Log("Turret build! Money left:  " + PlayerStats.Money);
-        GameObject effect=(GameObject)Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity);
-        Destroy(effect, 5f);
-    }
+   
 
     public void SelectNode(node node)
     {
@@ -66,5 +52,9 @@ public class BuildManager : MonoBehaviour {
 
         turretToBuild = turret;
         DeselectNode();
+    }
+    public  NewBehaviourScript GetTurretToBuild()
+    {
+        return turretToBuild;
     }
 }
