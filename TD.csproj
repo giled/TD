@@ -90,6 +90,7 @@
     <Compile Include="Assets\scripts\PlayerStats.cs" />
     <Compile Include="Assets\scripts\Shop.cs" />
     <Compile Include="Assets\scripts\TurretBlueprint.cs" />
+    <Compile Include="Assets\scripts\Wave.cs" />
     <Compile Include="Assets\scripts\WaveSpawner.cs" />
     <Compile Include="Assets\scripts\kelias.cs" />
     <Compile Include="Assets\scripts\node.cs" />
